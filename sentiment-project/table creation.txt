@@ -1,0 +1,8 @@
+CREATE TABLE sentiment_results (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    text VARCHAR(255) NOT NULL,
+    textblob_sentiment VARCHAR(50),
+    vader_sentiment VARCHAR(50),
+    vader_scores TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

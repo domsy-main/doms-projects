@@ -1,0 +1,214 @@
+/* Base Layout */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* Splash Screen */
+#splash {
+    position: fixed;
+    inset: 0;
+    background: #111;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    transition: opacity 0.4s ease;
+}
+
+.loader-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.loader {
+    border: 8px solid #555;
+    border-top: 8px solid #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 1.2s linear infinite;
+}
+
+.loader-img {
+    position: absolute;
+    top: 54%;
+    left: 56%;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+#splash h1 {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Main Content */
+#main-content {
+    display: none;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Filter Buttons */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-bar button {
+    padding: 10px 16px;
+    background-color: #4e555d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.filter-bar button:hover {
+    background-color: #0056b3;
+}
+
+/* Section Headers */
+.thread-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #222;
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
+}
+
+/* Thread Lists */
+.thread-section ul,
+ul.thread-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.thread-section li,
+ul.thread-list li {
+    background: #fff;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.thread-section li:hover,
+ul.thread-list li:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: scale(1.01);
+}
+
+.thread-section li a,
+ul.thread-list li a {
+    font-weight: 600;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.thread-section li a:hover,
+ul.thread-list li a:hover {
+    text-decoration: underline;
+}
+
+.thread-section li span,
+ul.thread-list li span {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #555;
+}
+
+/* Action Button */
+.action-bar {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #000;
+    color: #fff;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #333;
+}
+
+/* Loader Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .loader {
+        width: 80px;
+        height: 80px;
+        border-width: 6px;
+    }
+
+    .loader-img {
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        left: 50%;
+    }
+
+    #splash h1 {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-bar button {
+        width: 100%;
+    }
+}
